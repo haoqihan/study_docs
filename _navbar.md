@@ -1,3 +1,4 @@
-- [主页](http://www.baidu.com)
-- 文档
+- [主页](<https://haoqihan.github.io/study_docs/#/>)
+- [github](https://github.com/haoqihan)
+- [博客](https://haoqihan.github.io/)
 
