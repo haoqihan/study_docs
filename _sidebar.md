@@ -8,4 +8,9 @@
 * [vim](vim/_sidebar.md)
 * [网络爬虫](网络爬虫/_sidebar.md)
 * [数据分析](数据分析/_sidebar.md)
+* [机器学习](机器学习/_sidebar.md)
+* [前端](前端/_sidebar.md)
+* [其他](其他/_sidebar.md)
+
+
 

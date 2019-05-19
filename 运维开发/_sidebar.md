@@ -1,1 +1,8 @@
-sadasdsad
+- linux基础
+- docker
+- nginx
+- openstark
+- k8s
+- jenkins
+- gitlab
+- zabbix
