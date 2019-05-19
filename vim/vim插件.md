@@ -107,7 +107,61 @@
 
 #### python-mode
 
-- 
+- [地址](https://github.com/python-mode/python-mode)
+
+#### tagbar
+
+- [地址](https://github.com/majutsushi/tagbar)
+- 代码大纲
+
+#### vim-interestingwords
+
+- 浏览代码的时候时常需要一个变量的使用方式
+- [地址](https://github.com/lfv89/vim-interestingwords)
+
+#### 代码补全
+
+- [deoplete.nvim](https://github.com/Shougo/deoplete.nvim)
+- 支持多种语言
+
+#### coc.vim
+
+- [地址](https://github.com/neoclide/coc.nvim)
+
+#### 格式化和静态检查
+
+- 格式化
+- [地址](https://github.com/sbdchd/neoformat)
+- 静态检查
+- [地址](https://github.com/w0rp/ale)
+
+#### vim快速注释
+
+- gcc 和 gc
+- [地址](https://github.com/tpope/vim-commentary)
+
+#### git+vim
+
+- Fugitive
+- [地址](https://github.com/tpope/vim-fugitive)
+- vim-gitgutter
+- [地址](https://github.com/airblade/vim-gitgutter)
+- gv.vim
+- [地址](https://github.com/junegunn/gv.vim)
+
+#### vim+tmux
+
+- 强大的终端复用工具，通过brew（mac） apt-get （ubuntu）安装
+- 可以复用终端，分屏，托管进程等
+- 在服务器上即使退出也不会被kill，托管进程也很方便
+
+
+
+
+
+
+
+
 
 
 
