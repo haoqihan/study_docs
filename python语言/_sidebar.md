@@ -1,0 +1,43 @@
+- 基础部分
+  - [基本信息](python语言/python基础/1.python的基本信息.md)
+  - [数据类型](python语言/python基础/2.数据类型.md)
+  - [流程控制和深浅拷贝](python语言/python基础/3.深浅拷贝和流程控制.md)
+  - [文件操作](python语言/python基础/4.文件操作.md)
+  - [编码、小数据池和运算符优先级](python语言/python基础/5.编码,小数据池,运算符的优先级.md)
+  - [异常处理](python语言/python基础/6.异常处理.md)
+-  函数部分
+  - [基本信息](python语言/函数部分/1.函数的基本信息.md)
+  - [三大器（装饰器、迭代器、生成器）](python语言/函数部分/2.三大器装饰器,迭代器,生成器.md)
+  - [关键字、内置函数、匿名函数](python语言/函数部分/3.关键字,内置函数,匿名函数和递归函数偏函数.md)
+- 面对对象
+  - [基本信息](python语言/面对对象/1.面对对象基本知识.md)
+  - [魔法方法](python语言/面对对象/3.面对对象的魔法方法)
+- 并发编程
+  - [进程](python语言/并发编程/1.进程.md)
+  - [线程](python语言/并发编程/2.线程.md)
+  - [协程](python语言/并发编程/3.协程.md)
+  - [IO模型](python语言/并发编程/4.IO模型.md)
+- Django框架
+
+  - [基本命令](python语言/django框架/1.基本命令.md)
+  - [路由系统](python语言/django框架/2.路由系统.md)
+  - [视图系统](python语言/django框架/3.视图系统.md)
+  - [模板系统](python语言/django框架/4.模板系统.md)
+  - [模型层](python语言/django框架/6.模型层.md)
+  - [表单层](python语言/django框架/7.表单.md)
+  - [ORM](python语言/django框架/8.ORM.md)
+  - [中间件](python语言/django框架/5.中间件.md)
+  - [缓存](python语言/django框架/9.缓存.md)
+- Flask框架
+
+  - 基础知识
+  - Flask和HTTP
+  - 模板
+  - 表单
+  - 数据库
+  - 电子邮件
+- tornado框架
+- django rest framework框架
+- 项目部署
+- 常用模块
+  - excel相关
