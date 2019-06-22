@@ -1,10 +1,3 @@
----
-title: mysql基础
-date: 2019-01-14 22:38:34
-tags: [mysql]
-categories: [数据库]
----
-
 ### mysql数据库基本命令
 
 #### **数据库的增删改查**

@@ -1,10 +1,3 @@
----
-title: beego框架
-date: 2019-05-01 15:54:40
-tags: [框架]
-categories: [框架]
----
-
 bee工具应用
 
 ```shell
