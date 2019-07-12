@@ -1,10 +1,3 @@
----
-title: python算法与数据结构
-date: 2019-04-16 19:25:19
-tags: [python面试]
-categories: [python面试]
----
-
 #### collections模块
 
 ##### namedtuple（）   可以使用名称访问tuple

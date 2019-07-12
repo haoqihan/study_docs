@@ -1,8 +1,11 @@
 - linux基础
 - docker
-- nginx
+  - [docker的基本使用](/运维开发/docker的基本使用.md)
+  - [docker常用命令](/运维开发/docker的常用命令.md)
+- [nginx](/运维开发/nginx笔记.md)
 - openstark
-- k8s
-- jenkins
+- [k8s](/运维开发/k8s的基本使用.md)
+- [jenkins](/运维开发/jenkins的基本使用.md)
 - gitlab
 - zabbix
+- [ansible](/运维开发/ansible的基本使用.md)

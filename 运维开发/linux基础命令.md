@@ -1,11 +1,4 @@
----
-title: linux基础命令
-date: 2019-01-16 11:23:01
-tags: [linux]
-categories: [linux]
----
-
-### **查看版本信息**
+**查看版本信息**
 
 - cat /etc/redhat-release :查看版本信息
 - uname -r 查看内核版本号

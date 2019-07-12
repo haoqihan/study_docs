@@ -1,12 +1,11 @@
-### 2019 GO 开发者成长路线图
-
 - GO 基础
-  - GO 命令行操作
-  - 基本信息
-  - 内建容器
-  - 结构体和接口
-  - defer 、Panic、recover
-  - 协程、缓冲区、select、互斥锁
+  - [GO 命令行操作](/go语言/GO基础/go命令行操作.md)
+  - [基本信息](/go语言/GO基础/基本信息.md)
+  - [内建容器](/go语言/GO基础/内建容器.md)
+  - [结构体和接口](/go语言/GO基础/结构体和接口.md)
+  - [defer 、Panic、recover](/go语言/GO基础/错误处理.md)
+  - [协程、缓冲区、select、互斥锁](/go语言/GO基础/协程、缓冲区、select、互斥锁.md)
 - GO模组
-  - 
+  - [strings包](/go语言/GO模块/strings包.md)
+  - [sync包](/go语言/GO模块/sync包.md)
 
