@@ -13,7 +13,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
   <script src="//unpkg.com/docsify"></script>
   <script src="//unpkg.com/prismjs/components/prism-bash.js"></script>
-  <script src="//unpkg.com/prismjs/components/prism-python.js"></script>
   <script src="//unpkg.com/prismjs/components/prism-go.js"></script>
   <script src="static/js/python.js"></script>   
 
@@ -21,28 +20,44 @@
 
 <body>
   <div id="app"></div>
-  <script>
+<script>
     window.$docsify = {
-      loadSidebar: true,
-      name: '',
-      repo: '',
-      loadNavbar: true,
-      coverpage: true,
+      auto2top: true, //当路线改变时，滚动到屏幕的顶部。
+      coverpage: true, //激活封面功能。如果为true，则会从中加载_coverpage.md。
+      executeScript: true, //执行页面上的脚本。只解析第一个脚本标记（演示）。如果存在Vue，则默认开启。
+      loadSidebar: true, //_sidebar.md如果为真，则从_sidebar.md文件加载边栏，否则从指定的路径加载。
+      loadNavbar: true,//_navbar.md如果为真，则从_navbar.md文件加载navbar ，否则从指定的路径加载。
+      mergeNavbar: true,//Navbar将在小屏幕上与侧边栏合并。
+      maxLevel: 4,//最大的内容表级别。
+      subMaxLevel: 2,//在自定义边栏中添加目录（TOC）。
+      ga: 'UA-106147152-1',
+      name: 'docsify',
       search: {
-        maxAge: 86400000,               // 过期时间，单位毫秒，默认一天测试
-        paths: 'auto',                      // or 'auto'，匹配文件路径
-        placeholder: 'Type to search',  // 搜索提示框文字， 支持本地化，例子在下面
-        placeholder: {
-          '/zh-cn/': '搜索',
-          '/': '搜索'
-        },
-        noData: 'No Results!',          // 找不到结果文字提示，支持本地化，例子在下面
         noData: {
-          '/zh-cn/': '找不到结果',
-          '/': 'No Results'
+          '/de-de/': 'Keine Ergebnisse!',
+          '/zh-cn/': '没有结果!',
+          '/': 'No results!'
         },
-        depth: 2,                       // 搜索标题的最大程级, 1 - 6
-      }
+        paths: 'auto',
+        placeholder: {
+          '/de-de/': 'Suche',
+          '/zh-cn/': '搜索',
+          '/': 'Search'
+        }
+      },
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      plugins: [
+        function(hook, vm) {
+          hook.beforeEach(function (html) {
+            var url = 'https://github.com/haoqihan/study_docs/blob/master/' + vm.route.file
+            var editHtml = '[:memo: Edit Document](' + url + ')\n'
+            return html
+              + '\n----\n'
+              + 'Last modified {docsify-updated} '
+              + editHtml
+          })
+        }
+      ]
     }
   </script>
   <script src="static/js/docsify.min.js"></script>
