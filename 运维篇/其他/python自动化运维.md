@@ -1,10 +1,3 @@
----
-title: python自动化运维
-date: 2019-02-18 18:05:29
-tags: [linux]
-categories: [linux]
----
-
 #### 自动化运维工具
 
 部署类：jenkins
