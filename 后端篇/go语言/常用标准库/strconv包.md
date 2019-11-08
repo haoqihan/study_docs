@@ -1,171 +1,186 @@
-```go
-// 将布尔值转换为字符串 true 或 false
-func FormatBool(b bool) string
+# 1. Strconv
 
-// 将字符串转换为布尔值
-// 它接受真值：1, t, T, TRUE, true, True
-// 它接受假值：0, f, F, FALSE, false, False
-// 其它任何值都返回一个错误。
-func ParseBool(str string) (bool, error)
+## 1.1. strconv包
+
+strconv包实现了基本数据类型与其字符串表示的转换，主要有以下常用函数： Atoi()、Itia()、parse系列、format系列、append系列。
+
+更多函数请查看[官方文档](https://golang.org/pkg/strconv/)。
+
+### 1.1.1. string与int类型转换
+
+这一组函数是我们平时编程中用的最多的。
+
+### 1.1.2. Atoi()
+
+Atoi()函数用于将字符串类型的整数转换为int类型，函数签名如下。
+
+```go
+func Atoi(s string) (i int, err error)
 ```
 
+如果传入的字符串参数无法转换为int类型，就会返回错误。
 
 ```go
+s1 := "100"
+i1, err := strconv.Atoi(s1)
+if err != nil {
+    fmt.Println("can't convert to int")
+} else {
+    fmt.Printf("type:%T value:%#v\n", i1, i1) //type:int value:100
+}
+```
 
-// ErrRange 表示值超出范围
-var ErrRange = errors.New("value out of range")
+### 1.1.3. Itoa()
 
-// ErrSyntax 表示语法不正确
-var ErrSyntax = errors.New("invalid syntax")
+Itoa()函数用于将int类型数据转换为对应的字符串表示，具体的函数签名如下。
 
-// 将整数转换为字符串形式。base 表示转换进制，取值在 2 到 36 之间。
-// 结果中大于 10 的数字用小写字母 a - z 表示。
-func FormatInt(i int64, base int) string
-func FormatUint(i uint64, base int) string
-
-// 将字符串解析为整数，ParseInt 支持正负号，ParseUint 不支持正负号。
-// base 表示进位制（2 到 36），如果 base 为 0，则根据字符串前缀判断，
-// 前缀 0x 表示 16 进制，前缀 0 表示 8 进制，否则是 10 进制。
-// bitSize 表示结果的位宽（包括符号位），0 表示最大位宽。
-func ParseInt(s string, base int, bitSize int) (i int64, err error)
-func ParseUint(s string, base int, bitSize int) (uint64, error)
-
-// 将整数转换为十进制字符串形式（即：FormatInt(i, 10) 的简写）
+```go
 func Itoa(i int) string
-
-// 将字符串转换为十进制整数，即：ParseInt(s, 10, 0) 的简写）
-func Atoi(s string) (int, error)
 ```
 
+示例代码如下：
+
 ```go
-// 示例
-func main() {
-	fmt.Println(strconv.ParseInt("FF", 16, 0))
-	// 255
-	fmt.Println(strconv.ParseInt("0xFF", 16, 0))
-	// 0 strconv.ParseInt: parsing "0xFF": invalid syntax
-	fmt.Println(strconv.ParseInt("0xFF", 0, 0))
-	// 255
-	fmt.Println(strconv.ParseInt("9", 10, 4))
-	// 7 strconv.ParseInt: parsing "9": value out of range
-}
+i2 := 200
+s2 := strconv.Itoa(i2)
+fmt.Printf("type:%T value:%#v\n", s2, s2) //type:string value:"200"
 ```
 
+### 1.1.4. a的典故
+
+【扩展阅读】这是C语言遗留下的典故。C语言中没有string类型而是用字符数组(array)表示字符串，所以Itoa对很多C系的程序员很好理解。
+
+### 1.1.5. Parse系列函数
+
+Parse类函数用于转换字符串为给定类型的值：ParseBool()、ParseFloat()、ParseInt()、ParseUint()。
+
+### 1.1.6. ParseBool()
 
 ```go
-// FormatFloat 将浮点数 f 转换为字符串形式
-// f：要转换的浮点数
-// fmt：格式标记（b、e、E、f、g、G）
-// prec：精度（数字部分的长度，不包括指数部分）
-// bitSize：指定浮点类型（32:float32、64:float64），结果会据此进行舍入。
-//
-// 格式标记：
-// 'b' (-ddddp±ddd，二进制指数)
-// 'e' (-d.dddde±dd，十进制指数)
-// 'E' (-d.ddddE±dd，十进制指数)
-// 'f' (-ddd.dddd，没有指数)
-// 'g' ('e':大指数，'f':其它情况)
-// 'G' ('E':大指数，'f':其它情况)
-//
-// 如果格式标记为 'e'，'E'和'f'，则 prec 表示小数点后的数字位数
-// 如果格式标记为 'g'，'G'，则 prec 表示总的数字位数（整数部分+小数部分）
-// 参考格式化输入输出中的旗标和精度说明
+func ParseBool(str string) (value bool, err error)
+```
+
+返回字符串表示的bool值。它接受1、0、t、f、T、F、true、false、True、False、TRUE、FALSE；否则返回错误。
+
+### 1.1.7. ParseInt()
+
+```go
+func ParseInt(s string, base int, bitSize int) (i int64, err error)
+```
+
+返回字符串表示的整数值，接受正负号。
+
+base指定进制（2到36），如果base为0，则会从字符串前置判断，”0x”是16进制，”0”是8进制，否则是10进制；
+
+bitSize指定结果必须能无溢出赋值的整数类型，0、8、16、32、64 分别代表 int、int8、int16、int32、int64；
+
+返回的err是`*NumErr`类型的，如果语法有误，err.Error = ErrSyntax；如果结果超出类型范围err.Error = ErrRange。
+
+### 1.1.8. ParseUnit()
+
+```go
+func ParseUint(s string, base int, bitSize int) (n uint64, err error)
+```
+
+ParseUint类似ParseInt但不接受正负号，用于无符号整型。
+
+### 1.1.9. ParseFloat()
+
+```go
+func ParseFloat(s string, bitSize int) (f float64, err error)
+```
+
+解析一个表示浮点数的字符串并返回其值。
+
+如果s合乎语法规则，函数会返回最为接近s表示值的一个浮点数（使用IEEE754规范舍入）。
+
+bitSize指定了期望的接收类型，32是float32（返回值可以不改变精确值的赋值给float32），64是float64；
+
+返回值err是`*NumErr`类型的，语法有误的，err.Error=ErrSyntax；结果超出表示范围的，返回值f为±Inf，err.Error= ErrRange。
+
+### 1.1.10. 代码示例
+
+```go
+b, err := strconv.ParseBool("true")
+f, err := strconv.ParseFloat("3.1415", 64)
+i, err := strconv.ParseInt("-2", 10, 64)
+u, err := strconv.ParseUint("2", 10, 64)
+```
+
+这些函数都有两个返回值，第一个返回值是转换后的值，第二个返回值为转化失败的错误信息。
+
+### 1.1.11. Format系列函数
+
+Format系列函数实现了将给定类型数据格式化为string类型数据的功能。
+
+### 1.1.12. FormatBool()
+
+```go
+func FormatBool(b bool) string
+```
+
+根据b的值返回”true”或”false”。
+
+### 1.1.13. FormatInt()
+
+```go
+func FormatInt(i int64, base int) string
+```
+
+返回i的base进制的字符串表示。base 必须在2到36之间，结果中会使用小写字母’a’到’z’表示大于10的数字。
+
+### 1.1.14. FormatUint()
+
+```go
+func FormatUint(i uint64, base int) string
+```
+
+是FormatInt的无符号整数版本。
+
+### 1.1.15. FormatFloat()
+
+```go
 func FormatFloat(f float64, fmt byte, prec, bitSize int) string
-
-// 将字符串解析为浮点数，使用 IEEE754 规范进行舍入。
-// bigSize 取值有 32 和 64 两种，表示转换结果的精度。 
-// 如果有语法错误，则 err.Error = ErrSyntax
-// 如果结果超出范围，则返回 ±Inf，err.Error = ErrRange
-func ParseFloat(s string, bitSize int) (float64, error)
 ```
+
+函数将浮点数表示为字符串并返回。
+
+bitSize表示f的来源类型（32：float32、64：float64），会据此进行舍入。
+
+fmt表示格式：’f’（-ddd.dddd）、’b’（-ddddp±ddd，指数为二进制）、’e’（-d.dddde±dd，十进制指数）、’E’（-d.ddddE±dd，十进制指数）、’g’（指数很大时用’e’格式，否则’f’格式）、’G’（指数很大时用’E’格式，否则’f’格式）。
+
+prec控制精度（排除指数部分）：对’f’、’e’、’E’，它表示小数点后的数字个数；对’g’、’G’，它控制总的数字个数。如果prec 为-1，则代表使用最少数量的、但又必需的数字来表示f。
+
+### 1.1.16. 代码示例
 
 ```go
-// 示例
-func main() {
-	s := "0.12345678901234567890"
-
-	f, err := strconv.ParseFloat(s, 32)
-	fmt.Println(f, err)                // 0.12345679104328156
-	fmt.Println(float32(f), err)       // 0.12345679
-
-	f, err = strconv.ParseFloat(s, 64)
-	fmt.Println(f, err)                // 0.12345678901234568
-}
+s1 := strconv.FormatBool(true)
+s2 := strconv.FormatFloat(3.1415, 'E', -1, 64)
+s3 := strconv.FormatInt(-2, 16)
+s4 := strconv.FormatUint(2, 16)
 ```
+
+### 1.1.17. 其他
+
+### 1.1.18. isPrint()
 
 ```go
-// 将 s 转换为双引号字符串
-func Quote(s string) string
-
-// 功能同上，非 ASCII 字符和不可打印字符会被转义
-func QuoteToASCII(s string) string
-
-// 功能同上，非图形字符会被转义
-func QuoteToGraphic(s string) string
-
-------------------------------
-
-// 示例
-func main() {
-	s := "Hello\t世界！\n"
-	fmt.Println(s)                         // Hello	世界！（换行）
-	fmt.Println(strconv.Quote(s))          // "Hello\t世界！\n"
-	fmt.Println(strconv.QuoteToASCII(s))   // "Hello\t\u4e16\u754c\uff01\n"
-	fmt.Println(strconv.QuoteToGraphic(s)) // "Hello\t世界！\n"
-}
-
+func IsPrint(r rune) bool
 ```
+
+返回一个字符是否是可打印的，和unicode.IsPrint一样，r必须是：字母（广义）、数字、标点、符号、ASCII空格。
+
+### 1.1.19. CanBackquote()
 
 ```go
-// 将 r 转换为单引号字符
-func QuoteRune(r rune) string
-
-// 功能同上，非 ASCII 字符和不可打印字符会被转义
-func QuoteRuneToASCII(r rune) string
-
-// 功能同上，非图形字符会被转义
-func QuoteRuneToGraphic(r rune) string
-
-------------------------------
-
-// Unquote 将“带引号的字符串” s 转换为常规的字符串（不带引号和转义字符）
-// s 可以是“单引号”、“双引号”或“反引号”引起来的字符串（包括引号本身）
-// 如果 s 是单引号引起来的字符串，则返回该该字符串代表的字符
-func Unquote(s string) (string, error)
-
-// UnquoteChar 将带引号字符串（不包含首尾的引号）中的第一个字符“取消转义”并解码
-//
-// s    ：带引号字符串（不包含首尾的引号）
-// quote：字符串使用的“引号符”（用于对字符串中的引号符“取消转义”）
-//
-// value    ：解码后的字符
-// multibyte：value 是否为多字节字符
-// tail     ：字符串 s 解码后的剩余部分
-// error    ：返回 s 中是否存在语法错误
-//
-// 参数 quote 为“引号符”
-// 如果设置为单引号，则 s 中允许出现 \'、" 字符，不允许出现单独的 ' 字符
-// 如果设置为双引号，则 s 中允许出现 \"、' 字符，不允许出现单独的 " 字符
-// 如果设置为 0，则不允许出现 \' 或 \" 字符，但可以出现单独的 ' 或 " 字符
-func UnquoteChar(s string, quote byte) (value rune, multibyte bool, tail string, err error)
-
-------------------------------
-
-// 示例
-func main() {
-	s1 := "`Hello	世界！`"                 // 解析反引号字符串
-	s2 := `"Hello\t\u4e16\u754c\uff01"` // 解析双引号字符串
-	fmt.Println(strconv.Unquote(s1))    // Hello	世界！ <nil>
-	fmt.Println(strconv.Unquote(s2))    // Hello	世界！ <nil>
-
-	fmt.Println()
-	fmt.Println(strconv.UnquoteChar(`\u4e16\u754c\uff01`, 0))
-	// 19990 true \u754c\uff01 <nil>
-	fmt.Println(strconv.UnquoteChar(`\"abc\"`, '"'))
-	// 34 false abc\" <nil>
-}
-
+func CanBackquote(s string) bool
 ```
+
+返回字符串s是否可以不被修改的表示为一个单行的、没有空格和tab之外控制字符的反引号字符串。
+
+### 1.1.20. 其他
+
+除上文列出的函数外，strconv包中还有Append系列、Quote系列等函数。具体用法可查看[官方文档](https://golang.org/pkg/strconv/)。
 
 ```go
 

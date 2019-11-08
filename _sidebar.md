@@ -24,7 +24,7 @@
 * [云计算](云计算/_sidebar.md)
 * 工具篇
   * [vim](工具篇/vim/_sidebar.md)
-  * [vscode的使用]()
+  * [操作环境](工具篇/操作环境/_sidebar.md)
   * [IDEA的使用]()
   * [jupyter的使用]()
   * [wireshark的使用]()
