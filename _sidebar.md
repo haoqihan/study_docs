@@ -6,6 +6,7 @@
   * [python语言](后端篇/python语言/_sidebar.md)
   * [go语言](后端篇/go语言/_sidebar.md)
   * [Rust](后端篇/rust/_sidebar.md)
+  * [java]()
 * 运维开发
   * [linux篇](运维篇/linux篇/_sidebar.md)
   * [shell篇](运维篇/shell篇/_sidebar.md)
@@ -26,7 +27,7 @@
   * [vim](工具篇/vim/_sidebar.md)
   * [操作环境](工具篇/操作环境/_sidebar.md)
   * [IDEA的使用]()
-  * [jupyter的使用]()
+  * [jupyter的使用](工具篇/jupyter的使用.md)
   * [wireshark的使用]()
 * [其他](其他/_sidebar.md)
 

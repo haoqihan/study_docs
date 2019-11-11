@@ -44,6 +44,17 @@ jupyter-nbextension install rise --py --sys-prefix
 jupyter-nbextension enable rise --py --sys-prefix
 ```
 
+更改notebook 显示样式
+
+```shell
+# 1.下载jupyterthemes
+pip install --upgrade jupyterthemes
+# 2.查看样式包（命令行）
+jt -l
+# 3.修改样式
+jt -t chesterish -T -N
+```
+
 
 
 
