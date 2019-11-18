@@ -1,10 +1,3 @@
----
-title: linux基础（一）
-date: 2019-02-07 18:00:44
-tags: [linux]
-categories: [linux]
----
-
 ### Linux安装
 
 #### 虚拟机的安装

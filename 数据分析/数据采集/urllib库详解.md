@@ -141,5 +141,3 @@ result = urlparse('https://blog.csdn.net/leejeff/article/details/52935706')
 print(result,type(result))
 # ParseResult(scheme='https', netloc='blog.csdn.net', path='/leejeff/article/details/52935706', params='', query='', fragment='') <class 'urllib.parse.ParseResult'>
 ```
-
-## 

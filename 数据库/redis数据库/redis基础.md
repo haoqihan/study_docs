@@ -1,10 +1,3 @@
----
-title: redis基础
-date: 2019-01-14 22:38:56
-tags: [redis]
-categories: [数据库]
----
-
 ### redis的数据类型
 
 1. string(字符串)

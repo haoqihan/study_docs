@@ -1,10 +1,3 @@
----
-title: linux基础(二)
-date: 2019-02-11 08:56:41
-tags: [linux]
-categories: [linux]
----
-
 #### 磁盘管理
 
 ##### df    查看磁盘分区使用状况

@@ -1,10 +1,3 @@
----
-title: ansible的基本使用
-date: 2019-01-13 16:25:34
-tags: [ansible]
-categories: [运维开发之路]
----
-
 #### 一.简介
 
 ansible是什么东西?官方的title是“Ansible is Simple IT Automation”——简单的自动化IT工具。这个工具的目标有这么几项：让我们自动化部署APP；自动化管理配置项；自动化的持续交付；自动化的（AWS）云服务管理。 

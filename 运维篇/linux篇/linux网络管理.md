@@ -1,10 +1,3 @@
----
-title: linux网络管理
-date: 2019-02-11 16:06:59
-tags: [linux]
-categories: [linux]
----
-
 ### 网络基础
 
 #### OSI七层模型

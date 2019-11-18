@@ -1,10 +1,3 @@
----
-title: linux权限管理之基本权限
-date: 2019-02-13 17:40:12
-tags: [linux]
-categories: [linux]
----
-
 ### 文件基本权限
 
 #### 基本权限的修改

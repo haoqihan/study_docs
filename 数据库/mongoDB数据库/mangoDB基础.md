@@ -1,10 +1,3 @@
----
-title: mangoDB基础
-date: 2019-01-14 22:39:24
-tags: [MangoDB]
-categories: [数据库]
----
-
 ## 数据库中的用法
 
 ### MangoDB的对应关系

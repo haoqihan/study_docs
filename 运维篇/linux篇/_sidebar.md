@@ -1,11 +1,11 @@
-- linux基础
-- docker
-  - [docker的基本使用](/运维开发/docker的基本使用.md)
-  - [docker常用命令](/运维开发/docker的常用命令.md)
-- [nginx](/运维开发/nginx笔记.md)
-- openstark
-- [k8s](/运维开发/k8s的基本使用.md)
-- [jenkins](/运维开发/jenkins的基本使用.md)
-- gitlab
-- zabbix
-- [ansible](/运维开发/ansible的基本使用.md)
+- [常用命令](运维篇/linux篇/linux基础命令.md)
+- [linux基础一](运维篇/linux篇/linux基础一.md)
+- [linux基础二](运维篇/linux篇/linux基础二.md)
+- [linux软件安装管理](运维篇/linux篇/linux软件安装管理.md)
+- [linux基本权限](运维篇/linux篇/linux权限管理之基本权限.md)
+- [linux特殊权限](运维篇/linux篇/linux权限管理之特殊权限.md)
+- [linux网络管理](运维篇/linux篇/linux网络管理.md)
+- [linux系统管理](运维篇/linux篇/linux系统管理.md)
+- [linux之安全应用](运维篇/linux篇/Linux之安全应用.md)
+- [linux之网络服务](运维篇/linux篇/Linux之网络服务.md)
+

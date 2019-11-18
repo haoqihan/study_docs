@@ -1,10 +1,3 @@
----
-title: linux系统管理
-date: 2019-02-14 19:34:05
-tags: [linux]
-categories: [linux]
----
-
 ### 进程管理
 
 #### 进程管理简介

@@ -1,10 +1,3 @@
----
-title: Linux之shell基础
-date: 2019-02-14 09:52:56
-tags: [linux]
-categories: [linux]
----
-
 ### shell基础
 
 #### shell概述

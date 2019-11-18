@@ -1,9 +1,4 @@
----
-title: Linux之shell实战
-date: 2019-02-14 09:53:15
-tags: [linux]
-categories: [linux]
----
+[学习地址](https://github.com/A-BenMao/pure-bash-bible-zh_CN)
 
 ### 主控脚本实现
 

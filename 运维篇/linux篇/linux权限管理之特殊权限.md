@@ -1,10 +1,3 @@
----
-title: linux权限管理之特殊权限
-date: 2019-02-13 17:40:37
-tags: [linux]
-categories: [linux]
----
-
 ### ACL权限
 
 #### ACL权限简介与开启

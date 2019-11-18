@@ -1,10 +1,3 @@
----
-title: Memcache的使用
-date: 2019-01-15 15:47:40
-tags: [memcached]
-categories: [数据库]
----
-
 ### 什么是Memcached?
 
 Memcached 是一个高性能的分布式内存对象缓存系统，用于动态Web应用以减轻数据库负载。它通过在内存中缓存数据和对象来减少读取数据库的次数，从而提高动态、数据库驱动网站的速度。Memcached基于一个存储键/值对的[hashmap](http://baike.baidu.com/view/1487140.htm)。其[守护进程](http://baike.baidu.com/view/53123.htm)（daemon ）是用[C](http://baike.baidu.com/subview/10075/6770152.htm)写的，但是客户端可以用任何语言来编写，并通过memcached协议与守护进程通信。 

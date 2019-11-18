@@ -1,10 +1,3 @@
----
-title: Linux软件安装管理
-date: 2019-02-12 21:17:22
-tags: [linux]
-categories: [linux]
----
-
 ### 软件包管理
 
 #### 软件包的分类

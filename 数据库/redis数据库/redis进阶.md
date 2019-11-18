@@ -1,10 +1,3 @@
----
-title: redis进阶
-date: 2019-01-14 22:39:06
-tags: [redis]
-categories: [数据库]
----
-
 ### 什么是redis
 
 **redis**是一个基于内存的高性能key-value**数据库**

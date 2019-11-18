@@ -1,10 +1,3 @@
----
-title: Linux之网络服务
-date: 2019-02-18 14:48:54
-tags: [linux]
-categories: [linux]
----
-
 ### Bind服务
 
 ```shell
