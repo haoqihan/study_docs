@@ -55,9 +55,20 @@ jt -l
 jt -t chesterish -T -N
 ```
 
+#### 扩展包
 
+```shell
+pip install jupyter_contrib_nbextensions
+jupyter contrib nbextension install --user
+```
 
+##### 推荐以下几个插件：
 
+- `Code prettify`，对代码进行格式化；
+- `Collapsible Headings`，可以根据headings折叠区域；
+- `Codefolding`，可以对代码块进行折叠；
+- `ScrollDown`，当代码输出内容过长，自动下拉滚动条；
+- `Table of Contents (2)`，根据markdown的标题栏自动生成目录，有个按钮，可以自动添加数字编号！！！；
 
 
 
