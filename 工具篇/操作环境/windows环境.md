@@ -63,6 +63,31 @@ https://www.typora.io/
 https://github.com/pbatard/rufus/releases
 ```
 
+### 下载mysql和redis
+
+```shell
+scoop install mysql
+# 设置后台服务
+mysqld.exe --install MySql --defaults-file="d:/lovejava/mysql-5.6/my.ini"  
+# d:/lovejava/mysql-5.6/my-default.ini 为你mysql安装的路径
+
+
+scoop install redis
+
+# 注释：scoop如果默认安装的话 scoop安装的目录就在 C:\Users\用户\scoop\apps
+# 1，在redis的目录下执行（执行后就作为windows服务了）
+redis-server --service-install redis.windows.conf
+
+# 2，安装好后需要手动启动redis
+redis-server --service-start
+
+# 3，停止服务
+redis-server --service-stop
+
+# 4，卸载redis服务
+redis-server --service-uninstall
+```
+
 
 
 
